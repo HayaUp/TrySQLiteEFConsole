@@ -6,7 +6,11 @@ namespace TrySQLiteEFConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using(var db = new UserContext())
+            {
+                db.Add(new User { UserId = 1, Name = "Alice" });
+                db.SaveChanges();
+            }
         }
     }
 }
