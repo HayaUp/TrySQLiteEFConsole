@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using System.IO;
 
 namespace TrySQLiteEFConsole
 {
@@ -15,7 +17,8 @@ namespace TrySQLiteEFConsole
 
         public UserContext()
         {
-            DbPath = "sample_database.db";
+            string desktop_path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            DbPath = $"{desktop_path}{Path.DirectorySeparatorChar}sample_database.db";
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

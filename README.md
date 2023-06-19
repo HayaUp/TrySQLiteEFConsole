@@ -11,6 +11,12 @@
   - バージョン6以降は ,Net のバージョンが合わなかった
     - ※開発環境は　.Net5
 
+## マイグレーション等を行おうとしたらエラー発生
+
+```
+You need to call SQLitePCL.raw.SetProvider().  If you are using a bundle package, this is done by calling SQLitePCL.Batteries.Init().
+```
+
 ## 参考
 
 - 【C#】Entity Framework Coreを使ってSQLiteを操作する
