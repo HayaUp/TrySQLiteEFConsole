@@ -12,8 +12,8 @@ namespace TrySQLiteEFConsole
     internal class UserContext : DbContext
     {
         public string DbPath;
-        public DbSet<User>? Users;
-        public DbSet<UserAddress>? UserAddresses;
+        public DbSet<User>? Users { get; set; }
+        public DbSet<Prefecture>? Prefectures { get; set; }
 
         public UserContext()
         {

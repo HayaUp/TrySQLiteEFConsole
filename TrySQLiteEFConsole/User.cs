@@ -8,9 +8,9 @@ namespace TrySQLiteEFConsole
 {
     public class User
     {
-        public int Id;
-        public string Name;
-        public List<User> Users;
+        public int UserId { get; set; }
+        public string Name { get; set; }
+        public List<User> Users { get; }
 
         public User()
         {

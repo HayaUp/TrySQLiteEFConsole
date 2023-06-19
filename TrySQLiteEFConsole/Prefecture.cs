@@ -8,9 +8,9 @@ namespace TrySQLiteEFConsole
 {
     public class Prefecture
     {
-        public int Id;
-        public string Name;
-        public List<Prefecture> Prefectures;
+        public int PrefectureId { get; set; }
+        public string Name { get; set; }
+        public List<Prefecture> Prefectures { get; }
 
         public Prefecture()
         {
