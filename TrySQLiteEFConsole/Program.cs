@@ -26,7 +26,7 @@ namespace TrySQLiteEFConsole
                 //db.Remove(user);
                 //db.SaveChanges();
 
-                AddDummyUsers(db);
+                //AddDummyUsers(db);
 
                 //var users = db.Users.Where(user => user.UserId % 2 == 0);
 

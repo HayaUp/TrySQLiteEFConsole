@@ -10,11 +10,5 @@ namespace TrySQLiteEFConsole
     {
         public int UserId { get; set; }
         public string Name { get; set; }
-        public List<User> Users { get; }
-
-        public User()
-        {
-            Users = new List<User>();
-        }
     }
 }
