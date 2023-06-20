@@ -13,7 +13,6 @@ namespace TrySQLiteEFConsole
     {
         public string DbPath;
         public DbSet<User>? Users { get; set; }
-        public DbSet<Prefecture>? Prefectures { get; set; }
 
         public UserContext()
         {

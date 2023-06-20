@@ -9,7 +9,7 @@ using TrySQLiteEFConsole;
 namespace TrySQLiteEFConsole.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20230619202938_InitialCreate")]
+    [Migration("20230620102758_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,12 +46,7 @@ namespace TrySQLiteEFConsole.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("UserId1")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("UserId");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("Users");
                 });
@@ -63,21 +58,9 @@ namespace TrySQLiteEFConsole.Migrations
                         .HasForeignKey("PrefectureId1");
                 });
 
-            modelBuilder.Entity("TrySQLiteEFConsole.User", b =>
-                {
-                    b.HasOne("TrySQLiteEFConsole.User", null)
-                        .WithMany("Users")
-                        .HasForeignKey("UserId1");
-                });
-
             modelBuilder.Entity("TrySQLiteEFConsole.Prefecture", b =>
                 {
                     b.Navigation("Prefectures");
-                });
-
-            modelBuilder.Entity("TrySQLiteEFConsole.User", b =>
-                {
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }
