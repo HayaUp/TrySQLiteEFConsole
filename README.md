@@ -22,6 +22,14 @@ You need to call SQLitePCL.raw.SetProvider().  If you are using a bundle package
 - Microsoft.Data.Sqlite をインストールした
 - https://github.com/dotnet/efcore/issues/24493#issuecomment-1228643696
 
+## Nuget パッケージマネージャーのパッケージマネージャーコンソールでコマンドを実行する
+
+- ツール -> Nuget パッケージマネージャー -> パッケージマネージャーコンソール
+  - Add-Migration InitialCreate
+    - 作成したクラスからデータベースファイルを作成する
+  - Update-Database
+    - コードの変更を反映する？
+
 ## 参考
 
 - 【C#】Entity Framework Coreを使ってSQLiteを操作する
