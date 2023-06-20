@@ -26,9 +26,9 @@ You need to call SQLitePCL.raw.SetProvider().  If you are using a bundle package
 
 - ツール -> Nuget パッケージマネージャー -> パッケージマネージャーコンソール
   - Add-Migration InitialCreate
-    - 作成したクラスからデータベースファイルを作成する
+    - 作成したクラスからデータベース作成・操作に必要なクラスを生成する
   - Update-Database
-    - コードの変更を反映する？
+    - 生成したクラスからデータベースファイルを作成する
 
 ## 参考
 
