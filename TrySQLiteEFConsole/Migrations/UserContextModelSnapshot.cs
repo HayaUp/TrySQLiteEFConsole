@@ -27,6 +27,9 @@ namespace TrySQLiteEFConsole.Migrations
 
                     b.HasKey("UserId");
 
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("IndexUserId");
+
                     b.ToTable("Users");
                 });
 #pragma warning restore 612, 618

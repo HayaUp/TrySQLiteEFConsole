@@ -24,5 +24,13 @@ namespace TrySQLiteEFConsole
         {
             options.UseSqlite($"Data Source={DbPath}");
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            // Users テーブルにインデックスを指定する
+            builder.Entity<User>()
+                .HasIndex(user => user.UserId)
+                .HasDatabaseName("IndexUserId");
+        }
     }
 }

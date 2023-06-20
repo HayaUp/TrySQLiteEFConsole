@@ -8,7 +8,7 @@ using TrySQLiteEFConsole;
 namespace TrySQLiteEFConsole.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20230620104402_InitialCreate")]
+    [Migration("20230620111305_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,6 +28,9 @@ namespace TrySQLiteEFConsole.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("UserId");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("IndexUserId");
 
                     b.ToTable("Users");
                 });

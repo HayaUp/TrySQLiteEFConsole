@@ -18,6 +18,11 @@ namespace TrySQLiteEFConsole.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IndexUserId",
+                table: "Users",
+                column: "Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -50,6 +50,24 @@ public class User
 }
 ```
 
+## インデックスを追加する
+
+```cs
+internal class UserContext : DbContext
+{
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        // Users テーブルにインデックスを指定する
+        // インデックスの名称を未指定だと IX_Users_Id になる
+        // HasDatabaseName() を使うとインデックス名を指定できる
+        // IsUnigue() を使うと
+        builder.Entity<User>()
+            .HasIndex(user => user.UserId)
+            .HasDatabaseName("IndexUserId");
+    }
+}
+```
+
 ## 参考
 
 - 【C#】Entity Framework Coreを使ってSQLiteを操作する
