@@ -26,20 +26,20 @@ namespace TrySQLiteEFConsole
                 //db.Remove(user);
                 //db.SaveChanges();
 
-                //AddDummyUsers(db);
+                AddDummyUsers(db);
 
-                var users = db.Users.Where(user => user.UserId % 2 == 0);
+                //var users = db.Users.Where(user => user.UserId % 2 == 0);
 
-                foreach(var user in users)
-                {
-                    Console.WriteLine(user.Name);
-                }
+                //foreach(var user in users)
+                //{
+                //    Console.WriteLine(user.Name);
+                //}
             }
         }
 
         static void AddDummyUsers(UserContext db)
         {
-            var user = new User();
+            //var user = new User();
 
             var names = new[]
             {
@@ -79,12 +79,17 @@ namespace TrySQLiteEFConsole
                 "Zoe",
             };
 
+            var users = new List<User>();
+
             for(int i = 0; i < names.Length; i++)
             {
-                user.Users.Add(new User { UserId = i + 1, Name = names[i] });
+                //// 本来の使い方ではない
+                //// ナビゲーションプロパティの使い方が違う
+                //user.Users.Add(new User { UserId = i + 1, Name = names[i] });
+                users.Add(new User { UserId = i + 1, Name = names[i] });
             }
 
-            db.AddRange(user.Users);
+            db.AddRange(users);
             db.SaveChanges();
         }
     }
