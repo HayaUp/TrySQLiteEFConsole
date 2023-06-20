@@ -26,7 +26,7 @@ namespace TrySQLiteEFConsole
                 //db.Remove(user);
                 //db.SaveChanges();
 
-                //AddDummyUsers(db);
+                AddDummyUsers(db);
 
                 //var users = db.Users.Where(user => user.UserId % 2 == 0);
 
@@ -86,7 +86,9 @@ namespace TrySQLiteEFConsole
                 //// 本来の使い方ではない
                 //// ナビゲーションプロパティの使い方が違う
                 //user.Users.Add(new User { UserId = i + 1, Name = names[i] });
-                users.Add(new User { UserId = i + 1, Name = names[i] });
+                //users.Add(new User { UserId = i + 1, Name = names[i] });
+                // UserId に値を指定していない場合は自動付番 1 から始まる
+                users.Add(new User { UserId = 0, Name = names[i] });
             }
 
             db.AddRange(users);
